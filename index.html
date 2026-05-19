@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fun Fact Generator</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      overflow: hidden;
+    }
+
+    .container {
+      background: rgba(255,255,255,0.15);
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      text-align: center;
+      width: 80%;
+      max-width: 500px;
+      color: white;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    #fact {
+      font-size: 20px;
+      margin: 20px 0;
+      min-height: 80px;
+    }
+
+    button {
+      background: white;
+      color: #2575fc;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>✨ Fun Fact Generator ✨</h1>
+
+  <div id="fact">
+    Click the button to see a fun fact!
+  </div>
+
+  <button onclick="newFact()">Generate Fact</button>
+</div>
+
+<script>
+  const facts = [
+    "Honey never spoils 🍯",
+    "Bananas are berries 🍌",
+    "Octopuses have 3 hearts ❤️",
+    "Sharks existed before trees 🦈",
+    "A day on Venus is longer than a year 🪐",
+    "Cats sleep for 70% of their lives 😺",
+    "Your brain is constantly eating itself 🧠",
+    "Sloths can hold their breath longer than dolphins 🦥",
+    "The Eiffel Tower grows in summer 🗼",
+    "There are more stars than grains of sand ✨"
+  ];
+
+  function newFact() {
+    const randomIndex = Math.floor(Math.random() * facts.length);
+    document.getElementById("fact").innerText = facts[randomIndex];
+  }
+</script>
+
+</body>
+</html>
